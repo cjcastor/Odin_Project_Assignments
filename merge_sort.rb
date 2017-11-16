@@ -1,9 +1,7 @@
 def sort(unsor_arr)
   if unsor_arr.size < 2
-  	puts "Array of 1: #{unsor_arr}"
   	return unsor_arr
   elsif unsor_arr.size > 1
-  	puts "Array of Many: #{unsor_arr}"
   	left_hand = sort(unsor_arr[0...unsor_arr.length/2])
   	right_hand = sort(unsor_arr[unsor_arr.length/2..-1])
   	return merge(left_hand, right_hand)
@@ -14,20 +12,15 @@ end
 def merge(sor_arr1, sor_arr2)
 	merged ||= []
 	while sor_arr1.size != 0 && sor_arr2.size != 0
-		puts "#{sor_arr1} is sor_arr1 and #{sor_arr2}"
 		if sor_arr1[0] < sor_arr2[0]
 		  merged << sor_arr1.slice!(0)
-		  puts "Merged: #{merged}"
 		else
 		  merged << sor_arr2.slice!(0)
-		  puts "Merged: #{merged}"
 		end
 	end
 	if sor_arr1 != []
-		puts "#{merged} is merged, and #{sor_arr1} is sor_arr1"
 		merged += sor_arr1
 	elsif sor_arr2!= []
-		puts "#{merged} is merged, and #{sor_arr2} is sor_arr2"
 		merged += sor_arr2
 	end
 	merged
